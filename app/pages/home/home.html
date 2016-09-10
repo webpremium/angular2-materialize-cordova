@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-navbar>
+	<button menuToggle>
+      <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title>Time</ion-title>
+  </ion-navbar>
+    <ion-toolbar primary>
+    <ion-searchbar (input)="getItems($event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-menu [content]="content">
+  <ion-toolbar>
+    <ion-title>Pages</ion-title>
+  </ion-toolbar>
+  <ion-content>
+    <ion-list>
+      <button ion-item (click)="openPage(loginPage)">
+        Login
+      </button>
+      <button ion-item (click)="openPage(signupPage)">
+        Signup
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav id="nav" #content [root]="rootPage"></ion-nav>
+
+
+<ion-content padding class="home">
+<button block menuToggle>Toggle Menu</button>
+  <h2>Welcome to Ionic!</h2>
+  <p>
+    This starter project comes with simple tabs-based layout for apps
+    that are going to primarily use a Tabbed UI.
+  </p>
+  <p>
+    Take a look at the <code>app/</code> directory to add or change tabs,
+    update any existing page or create new pages.
+  </p>
+  <div id="map"></div>
+  <button (click)="Start()">Start()</button>
+  <button (click)="Stop()">Stop()</button>
+  <button (click)="deviceWrite()">deviceWrite()</button>
+  <div id="position">---</div>
+  
+<ion-grid>
+  <ion-row>
+    <ion-col width-50>This column will take 10% of space</ion-col>
+    <ion-col width-50>This column will take 10% of space</ion-col>
+  </ion-row>
+</ion-grid>
+  
+  <ion-slides pager>
+
+  <ion-slide style="background-color: green">
+    <h2>Slide 1</h2>
+  </ion-slide>
+
+  <ion-slide style="background-color: blue">
+    <h2>Slide 2</h2>
+  </ion-slide>
+
+  <ion-slide style="background-color: red">
+    <h2>Slide 3</h2>
+  </ion-slide>
+
+</ion-slides>
+</ion-content>

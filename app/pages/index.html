@@ -1,0 +1,53 @@
+<div class="main">
+
+<div class="navbar-fixed">
+	<nav>
+		<div class="nav-wrapper">
+			<a href="#!" class="brand-logo left">Logo</a>
+			<ul class="right">
+				<li><a routerLink="/page" routerLinkActive="active">page</a></li>
+				<li><a routerLink="/page2" routerLinkActive="active">page2</a></li>
+				<li><a materialize="sideNav" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a></li>
+			</ul>
+		</div>
+	</nav>
+</div>
+
+
+
+<ul id="slide-out" class="side-nav" materialize="sideNav">
+	<li><div class="userView">
+      <img class="background" src="images/office.jpg">
+      <a href="#!user"><img class="circle" src="images/yuna.jpg"></a>
+      <a href="#!name"><span class="white-text name">John Doe</span></a>
+      <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+	</div></li>
+	<li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+    <li><a href="#!">Second Link</a></li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Subheader</a></li>
+    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+</ul>
+
+
+<h1>{{title}}</h1>
+<p>{{myHero}}</p>
+<script>
+</script>
+
+        
+
+
+
+<button (click)="change()">change()</button>
+
+
+
+<router-outlet></router-outlet>
+
+
+</div>
+<footer class="page-footer navbar-fixed">
+	<div class="container">
+	</div>
+</footer>

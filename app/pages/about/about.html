@@ -1,0 +1,38 @@
+<div class="row">
+	
+	<div class="col s4">
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet felis ut orci pellentesque, eu sollicitudin lectus sagittis. Aliquam nec mollis diam. Vestibulum ultricies mi lobortis erat tempus egestas. Vivamus dignissim pretium ipsum eu pretium. Integer tristique vulputate eros, nec bibendum sapien pulvinar sed. Nulla eleifend vestibulum lectus aliquet ullamcorper. Nam bibendum vestibulum fermentum. Quisque sollicitudin malesuada ultrices. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque vehicula, elit vel placerat varius, nunc orci i
+	</div>
+	<div class="col s4">
+		
+		<article class="clock">
+		  <div class="hours-container" #hourscontainer>
+			<div class="hours" #hours></div>
+		  </div>
+		  <div class="minutes-container" #minutescontainer>
+			<div class="minutes" #minutes></div>
+		  </div>
+		  <div class="seconds-container" #secondscontainer>
+			<div class="seconds" #seconds></div>
+		  </div>
+		  <img src="images/ios_clock.png"/>
+		</article>
+	</div>
+	<div class="col s4">
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet felis ut orci pellentesque, eu sollicitudin lectus sagittis. Aliquam nec mollis diam. Vestibulum ultricies mi lobortis erat tempus egestas. Vivamus dignissim pretium ipsum eu pretium. Integer tristique vulputate eros, nec bibendum sapien pulvinar sed. Nulla eleifend vestibulum lectus aliquet ullamcorper. Nam bibendum vestibulum fermentum. Quisque sollicitudin malesuada ultrices. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque vehicula, elit vel placerat varius, nunc orci i
+	</div>
+</div>
+<a class="waves-effect waves-light btn modal-trigger">Modalisation</a>
+
+			<input [(ngModel)]="pomodoroTimer.timeLeft" />
+
+<button (click)="Write()">Write()</button>
+<button (click)="deviceWrite()">deviceWrite()</button>
+<button (click)="change()">change()</button>
+<button (click)="initLocalClocks()">initLocalClocks()</button>
+<button (click)="initLocalClocks('stop')">initLocalClocks("stop")</button>
+<button (click)="initLocalClocks('timer')">initLocalClocks("timer")</button>
+<div #digital ></div>
+<div #digitalLeft ></div>
+<div #digitalTotal ></div>
+    <button (click)="changeName()">Change Name</button>
