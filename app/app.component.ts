@@ -1,5 +1,5 @@
 import { Component,Input,AfterViewInit, OnInit,QueryList,ElementRef, Renderer,   } from '@angular/core';
-import {sharedService} from './src/sharedService';
+
 import { models } from './models';
 
 

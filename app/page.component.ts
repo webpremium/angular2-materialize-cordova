@@ -1,5 +1,5 @@
 import {ViewChild, ViewChildren,Directive,Component, OnInit,QueryList,ElementRef, Renderer, Input } from '@angular/core';
-import {sharedService} from './src/sharedService';
+
 import { models } from './models';
 import { AppComponent,modelsChange } from './app.component';
 import { write , file , del } from './file.ts';
@@ -26,8 +26,8 @@ pomodoroTimer.timeTotal=0;
 
 
 @Component({
-  templateUrl: './pages/about/about.html',
-   styleUrls: ['./pages/about/about.css']
+  templateUrl: './pages/page.html',
+   styleUrls: ['./pages/page.css']
 })
 
 
