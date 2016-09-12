@@ -1,6 +1,10 @@
 Warning : in development, but you can start using it in a shambolic state !
 
-Global require : Gulp, Cordova
+Global require : NodeJS, Gulp, Cordova
+
+NodeJS install : https://nodejs.org -> Donwload and install version
+
+Cordova install command : npm install -g cordova
 
 
 
