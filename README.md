@@ -1,6 +1,6 @@
 Warning : in development, but you can start using it in a shambolic state !
 
--------------------------------------------------------------------------
+----------------------------------
 
 Global require : NodeJS, Cordova
 
