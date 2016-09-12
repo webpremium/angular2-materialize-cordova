@@ -16,7 +16,7 @@ Require : NodeJS, Cordova
 
 NodeJS install : https://nodejs.org -> Download and install latest version
 
-Cordova install command : npm install -g cordova
+Cordova install command ( Require NodeJS ) : npm install -g cordova
 
 ----------------------
 
