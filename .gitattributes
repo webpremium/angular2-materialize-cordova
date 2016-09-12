@@ -1,0 +1,4 @@
+ CHANGELOG merge=union
+\ No newline at end of file
+ CHANGELOG merge=union
+ *.js.es6 gitlab-language=javascript
