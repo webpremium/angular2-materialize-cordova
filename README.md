@@ -12,7 +12,7 @@ Warning : in development, but you can start using it in a shambolic state !
 
 ----------------------
 
-Global require : NodeJS, Cordova
+Require : NodeJS, Cordova
 
 NodeJS install : https://nodejs.org -> Download and install latest version
 
