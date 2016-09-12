@@ -8,10 +8,6 @@ Material : angular2-materialize whitout webpack ( patch ).
 
 ----------------------
 
-Use ./app/ dir for devellopement, ./app/images/ for all images.
-
-----------------------
-
 Warning : in development, but you can start using it in a shambolic state !
 
 ----------------------
@@ -39,4 +35,8 @@ cordova platform add browser
 npm start
 
 Enjoy !
+
+----------------------
+
+Use ./app/ dir for devellopement, ./app/images/ for all images.
 
