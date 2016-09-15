@@ -179,8 +179,12 @@ gulpcssAdapt = function(options) {
    //.pipe(minifyCss({compatibility: 'ie8'}))
    //.pipe(rename({extname: '.min.css'}))
    .pipe(gulp.dest(options.dest))
-   .on('end', function() {
-     
+   .on('end', function() {		  
+		  if(startFirst==false){
+			  
+			 reloadAll();
+			 
+		  }
    });
 };
 gulp.task('build-css2', gulpcssAdapt);
