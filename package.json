@@ -4,11 +4,7 @@
   "description": "",
   "scripts": {
     "start": "concurrent --kill-others \"gulp start\"",
-    "postinstall": "typings install",
-    "tsc": "tsc",
-    "tsc:w": "tsc -w",
-    "typings": "typings",
-    "webdriver:update": "webdriver-manager update"
+    "production": "concurrent --kill-others \"gulp start --type production\""
   },
   "keywords": [],
   "author": "",

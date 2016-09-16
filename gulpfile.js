@@ -1,4 +1,5 @@
 var	gulp			= require('gulp'),
+	gutil = require('gulp-util'),
 	minifyCss 		= require('gulp-minify-css'),
 	sass			= require('gulp-sass'),
 	del				= require('del'),
@@ -72,9 +73,9 @@ gulp.task('build2', function(done){
 	
 
       buildBrowserify({
-        minify: isRelease,
+        minify: gutil.env.type === 'production' ? true : false,
         browserifyOptions: {
-          debug: !isRelease
+          debug: gutil.env.type !== 'production' ? true : false
         },
         uglifyOptions: {
           mangle: false
@@ -152,7 +153,7 @@ gulp.task('copy-css2', function(options) {
   options.dest = options.dest || 'www';
 
   return gulp.src(options.src)
-	//.pipe(minifyCss({compatibility: 'ie8'}))
+	.pipe(gutil.env.type === 'production' ? minifyCss({compatibility: 'ie8'}) : gutil.noop())
     .pipe(gulp.dest(options.dest)).on('end', function(err){
 		  
 		  if(startFirst==false){
@@ -176,7 +177,7 @@ gulpcssAdapt = function(options) {
   options.dest = options.dest || 'www';
  return gulp.src(options.src)
    .pipe(sass({errLogToConsole: true}))
-   //.pipe(minifyCss({compatibility: 'ie8'}))
+   .pipe( gutil.env.type === 'production' ? minifyCss({compatibility: 'ie8'}) : gutil.noop() )
    //.pipe(rename({extname: '.min.css'}))
    .pipe(gulp.dest(options.dest))
    .on('end', function() {		  
