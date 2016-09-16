@@ -1,4 +1,4 @@
-angular2-materialize-cordova
+Angular2 Materialize Cordova
 
 Fastest developement environnement and full test your application in BrowserSync with cordova browser build.
 
