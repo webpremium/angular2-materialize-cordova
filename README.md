@@ -4,7 +4,7 @@ Fastest developement environnement and full test your application in BrowserSync
 
 Environnement : Angular2, Typescript, scss.
 
-Material : materialize whitout webpack ( patch ).
+Material : materialize whitout webpack( no velocity Error ).
 
 ----------------------
 
