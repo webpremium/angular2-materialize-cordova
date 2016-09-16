@@ -1,1 +1,16 @@
 
+*.ts linguist-language=TypeScript
+*.js linguist-language=JavaScript
+*.scss linguist-language=CSS
+*.css linguist-language=CSS
+
+hooks/* linguist-vendored
+node_modules/* linguist-vendored
+platforms/* linguist-vendored
+plugins/* linguist-vendored
+www/* linguist-vendored
+
+*.ts linguist-vendored=false
+*.js linguist-vendored=false
+*.scss linguist-vendored=false
+*.css linguist-vendored=false
