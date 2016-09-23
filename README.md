@@ -39,6 +39,8 @@ Enjoy !
 Use ./app/ dir for devellopement, ./app/images/ for all images.
 
 For Initialization use materialize attribute name and declare selector, example :
+
 			Good Methode : materialize="sideNav"
+			
 			Bad Methode : $(".button-collapse").sideNav();
 
