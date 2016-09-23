@@ -135,7 +135,12 @@ function CordovaRun(){
 }
 var reloadAll = function(){CordovaRun(); reload();};
 
-var gulpScriptAdapt= function(options) {
+
+
+
+
+
+gulp.task('build-js-defaultSrc', function(options) {
   options.src = options.src || defaultSrc;
   options.dest = options.dest || 'www/js';
 
@@ -149,8 +154,12 @@ var gulpScriptAdapt= function(options) {
 		  }
 		  
 	  });
-}
-var gulpScriptAdapt3= function(options) {
+});
+
+
+
+
+gulp.task('build-js', function(options) {
 
   options.src = options.src || 'app/**/*.js';
   options.dest = options.dest || 'www';
@@ -165,10 +174,12 @@ var gulpScriptAdapt3= function(options) {
 		  }
 		  
 	  });
-}
+});
 
 
-gulp.task('build2', function(done){
+
+
+gulp.task('build', function(done){
 	
 
       buildBrowserify({
@@ -191,11 +202,8 @@ gulp.task('build2', function(done){
 
 });
 
-gulp.task('build-js2', gulpScriptAdapt);
-gulp.task('build-js3', gulpScriptAdapt3);
 
-
-gulpfontsAdapt = function(options) {
+gulp.task('build-fonts', function(options) {
   options.src = options.src || 'app/**/*.+(ttf|eot|ijmap|svg|woff|woff2)';
   options.dest = options.dest || 'www';
 
@@ -209,29 +217,11 @@ gulpfontsAdapt = function(options) {
 		  }
 		  
 	  });
-}
-
-gulp.task('build-fonts2', gulpfontsAdapt);
+});
 
 
-gulphtmlAdapt = function(options) {
-  options.src = options.src || 'app/**/*.html';
-  options.dest = options.dest || 'www';
 
-  return gulp.src(options.src)
-    .pipe(gulp.dest(options.dest)).on('end', function(err){
-		  
-		  if(startFirst==false){
-			  
-			 reloadAll();
-			 
-		  }
-		  
-	  });
-}
-
-
-gulp.task('build-html2', function(options) {
+gulp.task('build-html', function(options) {
   options.src = options.src || 'app/**/*.html';
   options.dest = options.dest || 'www';
 
@@ -247,7 +237,9 @@ gulp.task('build-html2', function(options) {
 	  });
 });
 
-gulp.task('copy-css2', function(options) {
+
+
+gulp.task('copy-css', function(options) {
   options.src = options.src || 'app/**/*.css';
   options.dest = options.dest || 'www';
 
@@ -267,7 +259,7 @@ gulp.task('copy-css2', function(options) {
 
 
 
-gulpcssAdapt = function(options) {
+gulp.task('build-css', function(options) {
   options.src = options.src || './app/**/*.scss';
   options.dest = options.dest || 'www';
  return gulp.src(options.src)
@@ -282,8 +274,7 @@ gulpcssAdapt = function(options) {
 			 
 		  }
    });
-};
-gulp.task('build-css2', gulpcssAdapt);
+});
 
 
 
@@ -303,7 +294,7 @@ gulp.task('clean', function(){
 gulp.task('start', ['clean'], function(){runSequence(['webserver'])});
 
 
-gulp.task('webserver',['build2', 'build-js2', 'build-js3', 'build-fonts2','copy-css2','build-css2', 'build-html2', 'images'], function(done){
+gulp.task('webserver',['build', 'build-js-defaultSrc', 'build-js', 'build-fonts','copy-css','build-css', 'build-html', 'images'], function(done){
 
 	
 	CordovaRun();
@@ -329,12 +320,12 @@ gulp.task('webserver',['build2', 'build-js2', 'build-js3', 'build-fonts2','copy-
 		
 		startFirst=false;
 		
-		gulp.watch('app/**/*.scss', ['build-css2']);
-		gulp.watch("app/**/*.css", ['copy-css2']);
-		gulp.watch("app/**/*.+(ttf|eot|ijmap|svg|woff|woff2)", ['build-fonts2']);
-		gulp.watch("app/**/*.js", ['build-js3']);
-		gulp.watch("app/**/*.html", ['build-html2']);
-		gulp.watch("app/**/*.ts",['build2']);
+		gulp.watch('app/**/*.scss', ['build-css']);
+		gulp.watch("app/**/*.css", ['copy-css']);
+		gulp.watch("app/**/*.+(ttf|eot|ijmap|svg|woff|woff2)", ['build-fonts']);
+		gulp.watch("app/**/*.js", ['build-js']);
+		gulp.watch("app/**/*.html", ['build-html']);
+		gulp.watch("app/**/*.ts",['build']);
 		
 		
 		
@@ -343,5 +334,5 @@ gulp.task('webserver',['build2', 'build-js2', 'build-js3', 'build-fonts2','copy-
 	
 });
 
-    
+
 
