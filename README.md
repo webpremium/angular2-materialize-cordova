@@ -6,11 +6,9 @@ Environnement : Angular2, Typescript, scss.
 
 Material : materialize whitout webpack( no velocity Error ).
 
-----------------------
-
-Warning : in development, but you can start using it in a shambolic state !
 
 ----------------------
+
 
 Require : NodeJS, Cordova
 
