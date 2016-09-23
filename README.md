@@ -2,15 +2,15 @@ Angular2 Materialize Cordova
 
 Fastest developement environnement and full test your application in BrowserSync with cordova browser build.
 
-Environnement : Angular2, Typescript, scss.
+			Environnement : Angular2, Typescript, scss.
 
-Material : materialize whitout webpack( no velocity Error ).
+			Material : materialize whitout webpack( no velocity Error ).
 
 
 ----------------------
 
 
-  Require : NodeJS, Cordova
+			Require : NodeJS, Cordova
 
 NodeJS install : https://nodejs.org -> Download and install latest version
 
