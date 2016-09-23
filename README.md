@@ -10,7 +10,7 @@ Material : materialize whitout webpack( no velocity Error ).
 ----------------------
 
 
-Require : NodeJS, Cordova
+  Require : NodeJS, Cordova
 
 NodeJS install : https://nodejs.org -> Download and install latest version
 
@@ -18,9 +18,9 @@ Cordova install command ( Require NodeJS ) : npm install -g cordova
 
 ----------------------
 
-Download Zip and Extract
+  Download Zip and Extract
 
-Open administrator cmd to angular2-materialize-cordova-master dir
+  Open administrator cmd to angular2-materialize-cordova-master dir
 
 ----------------------
 
