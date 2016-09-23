@@ -16,7 +16,7 @@ import { models } from './models';
 import {MaterializeDirective} from "angular2-materialize";
 
 declare var $:any;
-//$.velocity = velocity;
+
 interface window { Velocity: any; }
 
 
@@ -24,7 +24,7 @@ interface window { Velocity: any; }
 
 
 
-export let modelsChange:any;
+
 
 @Component({
 	moduleId: module.id,
@@ -35,22 +35,8 @@ export let modelsChange:any;
 
 export class AppComponent implements AfterViewInit{
 	title:string;
-	myHero: string;
-	myFunction: string;
-	/*change(){
-		console.log(22);
-		this.title = models.title.value;
-		console.log(24);
-	}*/
-	change(){
-		console.log(28);
-		this.title = "MMM";
-		console.log(30);
-	};
-	
+
   constructor(private el:ElementRef) {
-    this.myHero = 'Windstorm';
-    this.myFunction = 'Windstorm';
 
 	
 	
@@ -60,15 +46,8 @@ export class AppComponent implements AfterViewInit{
 	
 	
   }
-  titleC(s){
-	  console.log(s);
-	  this.title = s;
-	  
-  }
-  
-  /*
-	document.addEventListener("deviceready", onDeviceReady, false);
-  */
+
+
 	
 }
 
