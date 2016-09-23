@@ -6,11 +6,6 @@ import { AppComponent } from './app.component';
 
 
 
-
-
-
-
-
 @Component({
   templateUrl: './pages/page.html',
    styleUrls: ['./pages/page.css']
@@ -24,33 +19,20 @@ export class PageComponent {
   title: string;
 
 
-	 
-	 
-	 
-	 
-
   constructor(element: ElementRef, renderer: Renderer) {
-	
-	models.title.value = 'Starter';
-	
 
-	
-	
-	this.element = element.nativeElement; 
+    models.title.value = 'Starter';
+
+
+
+
+    this.element = element.nativeElement;
     this.renderer = renderer;
-	
-	
-	
-	
-	
-  }
-  
+
+
+
+
+
+    }
 
 }
-
-
-
-
-
-
-

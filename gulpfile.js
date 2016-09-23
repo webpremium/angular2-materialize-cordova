@@ -110,27 +110,27 @@ function CordovaAndroidBuild(){
 	runSequence(
     'androidBuild',
     function (error) {
-      
+
       if(typeof callback == "function")callback(error);
-	  
+
     });
 }
 function CordovaRunAndroidDevice(){
 	runSequence(
     'androidDevice',
     function (error) {
-      
+
       if(typeof callback == "function")callback(error);
-	  
+
     });
 }
 function CordovaRun(){
 	runSequence(
     'cordova',
     function (error) {
-      
+
       if(typeof callback == "function")callback(error);
-	  
+
     });
 }
 var reloadAll = function(){CordovaRun(); reload();};
@@ -146,11 +146,11 @@ gulp.task('build-js-defaultSrc', function(options) {
 
   return gulp.src(options.src)
     .pipe(gulp.dest(options.dest)).on('end', function(err){
-		  
+
 		  if(startFirst==false){
-			  
+
 			 reloadAll();
-			 
+
 		  }
 		  
 	  });
@@ -166,13 +166,13 @@ gulp.task('build-js', function(options) {
 
   return gulp.src(options.src)
     .pipe(gulp.dest(options.dest)).on('end', function(err){
-		  
+
 		  if(startFirst==false){
-			  
+
 			 reloadAll();
-			 
+
 		  }
-		  
+
 	  });
 });
 
@@ -180,7 +180,7 @@ gulp.task('build-js', function(options) {
 
 
 gulp.task('build', function(done){
-	
+
 
       buildBrowserify({
         minify: gutil.env.type === 'production' ? true : false,
@@ -191,11 +191,11 @@ gulp.task('build', function(done){
           mangle: false
         }
       }).on('end', function(err){
-		  
+
 		  if(startFirst==false){
-			  
+
 			 reloadAll();
-			 
+
 		  }
 		  done(err);
 	  });
@@ -209,13 +209,13 @@ gulp.task('build-fonts', function(options) {
 
   return gulp.src(options.src)
     .pipe(gulp.dest(options.dest)).on('end', function(err){
-		  
+
 		  if(startFirst==false){
-			  
+
 			 reloadAll();
-			 
+
 		  }
-		  
+
 	  });
 });
 
@@ -227,13 +227,13 @@ gulp.task('build-html', function(options) {
 
   return gulp.src(options.src)
     .pipe(gulp.dest(options.dest)).on('end', function(err){
-		  
+
 		  if(startFirst==false){
-			  
+
 			 reloadAll();
-			 
+
 		  }
-		  
+
 	  });
 });
 
@@ -246,13 +246,13 @@ gulp.task('copy-css', function(options) {
   return gulp.src(options.src)
 	.pipe(gutil.env.type === 'production' ? minifyCss({compatibility: 'ie8'}) : gutil.noop())
     .pipe(gulp.dest(options.dest)).on('end', function(err){
-		  
+
 		  if(startFirst==false){
-			  
+
 			 reloadAll();
-			 
+
 		  }
-		  
+
 	  });
 });
 
@@ -267,11 +267,11 @@ gulp.task('build-css', function(options) {
    .pipe( gutil.env.type === 'production' ? minifyCss({compatibility: 'ie8'}) : gutil.noop() )
    //.pipe(rename({extname: '.min.css'}))
    .pipe(gulp.dest(options.dest))
-   .on('end', function() {		  
+   .on('end', function() {
 		  if(startFirst==false){
-			  
+
 			 reloadAll();
-			 
+
 		  }
    });
 });
@@ -296,43 +296,40 @@ gulp.task('start', ['clean'], function(){runSequence(['webserver'])});
 
 gulp.task('webserver',['build', 'build-js-defaultSrc', 'build-js', 'build-fonts','copy-css','build-css', 'build-html', 'images'], function(done){
 
-	
+
 	CordovaRun();
-	
-	
+
+
 	if( gutil.env.type === 'androidDevice' ){
 		CordovaRunAndroidDevice();
-		
+
 	}
 	if( gutil.env.type === 'androidBuild' ){
 		CordovaAndroidBuild();
-		
+
 	}
-	
+
 	if(!gutil.env.type ){
-		
+
 		browserSync.init({
 			server: {
 				baseDir: "./platforms/browser/www"
 			}
 		});
-		
-		
+
+
 		startFirst=false;
-		
+
 		gulp.watch('app/**/*.scss', ['build-css']);
 		gulp.watch("app/**/*.css", ['copy-css']);
 		gulp.watch("app/**/*.+(ttf|eot|ijmap|svg|woff|woff2)", ['build-fonts']);
 		gulp.watch("app/**/*.js", ['build-js']);
 		gulp.watch("app/**/*.html", ['build-html']);
 		gulp.watch("app/**/*.ts",['build']);
-		
-		
-		
+
+
+
 	}
 
-	
+
 });
-
-
-
