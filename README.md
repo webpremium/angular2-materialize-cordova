@@ -18,19 +18,19 @@ Cordova install command ( Require NodeJS ) : npm install -g cordova
 
 ----------------------
 
-  Download Zip and Extract
+ Download Zip and Extract
 
-  Open administrator cmd to angular2-materialize-cordova-master dir
+Open administrator cmd to angular2-materialize-cordova-master dir
 
 ----------------------
 
 angular2-materialize-cordova install commande:
 
-npm install
+			npm install
 
-cordova platform add browser
+			cordova platform add browser
 
-npm start
+			npm start
 
 Enjoy !
 
